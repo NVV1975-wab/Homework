@@ -1,0 +1,196 @@
+/* Основные стили для всего документа */
+body {
+    font-family: Montserrat, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34;
+    /* Темный фон */
+    color: #ffffff;
+    /* Белый цвет текста */
+}
+
+/* Стили для заголовка */
+.header {
+    background-color: rgba(225, 255, 143, 1);
+    /* Зеленый фон */
+    padding: 20px;
+
+}
+
+.header__content {
+    max-width: 700px;
+    margin-left: 120px;
+    margin-bottom: 156px;
+}
+
+.header__title {
+    margin: 0;
+    font-size: 64px;
+    margin-top: 196px;
+    color: #000;
+}
+
+.header__description {
+    color: #000;
+    font-size: 24px;
+    max-width: 650px;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+
+/* Стили для кнопки начала */
+.start-button {
+    background-color: black;
+    /* Черный фон для кнопки */
+    color: white;
+    /* Белый текст */
+    padding: 19px 72px;
+    text-decoration: none;
+    border-radius: 60px;
+    transition: background-color 0.3s;
+}
+
+.header__button {
+    font-size: 24px;
+}
+
+.start-button:hover {
+    background-color: #555;
+    /* Светло-серый при наведении */
+}
+
+/* Стили для навигации */
+.nav {
+    background-color: rgba(188, 236, 48, 1);
+    /* Темный фон навигации */
+    padding: 10px 0;
+    margin-top: 156px;
+}
+
+.nav__list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    /* Запрещаем перенос текста на новую строку */
+    overflow: hidden;
+
+}
+
+.nav__list::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.nav__list-content {
+    display: inline-block;
+    animation: scrollLeft 20s linear infinite;
+    /* Анимация: 20 сек, линейно, бесконечно */
+}
+
+.nav__item {
+    display: inline-block;
+    /* Важно для inline-контейнера */
+    margin: 0 15px;
+    font-size: 30px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* Стили для секции игр */
+.section{
+
+}
+
+.section__title {
+    margin-top: 20px;
+    font-size: 64px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Размещаем плитки игр */
+    margin: 20px;
+}
+
+.game-tile {
+    background-color: #444;
+    /* Темный фон для плиток */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+    /* Фиксированная ширина плитки */
+    transition: transform 0.3s;
+}
+
+.game-tile:hover {
+    transform: scale(1.05);
+    /* Увеличение при наведении */
+}
+
+.play-button {
+    background-color: #4CAF50;
+    /* Зеленый фон для кнопки игры */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: #45a049;
+    /* Более темный зеленый при наведении */
+}
+
+/* Стили для секции мини-игр */
+.mini-games {
+    margin: 20px;
+}
+
+.mini-games__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mini-games__game {
+    background-color: #444;
+    /* Темный фон для мини-игр */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    text-align: center;
+    width: 90%;
+    /* Ширина мини-игр */
+}
+
+/* Стили для футера */
+.footer {
+    background-color: #333;
+    /* Темный фон футера */
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer__text {
+    margin: 0;
+    color: white;
+}
