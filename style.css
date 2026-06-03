@@ -109,8 +109,8 @@ nav ul li a {
 
 
 /* Стили для секции игр */
-.section{
-
+.section {
+    margin-top: 94px;
 }
 
 .section__title {
