@@ -6,7 +6,7 @@ body {
     background-color: #282c34;
     /* Темный фон */
     color: #ffffff;
-    /* Белый цвет текста */
+
 }
 
 /* Стили для заголовка */
@@ -14,12 +14,12 @@ body {
     background-color: rgba(225, 255, 143, 1);
     /* Зеленый фон */
     padding: 20px;
-
+    width: 100%;
 }
 
 .header__content {
     max-width: 700px;
-    margin-left: 120px;
+    /* margin-left: 120px;*/
     margin-bottom: 156px;
 }
 
@@ -56,61 +56,16 @@ body {
 }
 
 .start-button:hover {
-    background-color: #555;
-    /* Светло-серый при наведении */
-}
-
-/* Стили для навигации */
-.nav {
-    background-color: rgba(188, 236, 48, 1);
-    /* Темный фон навигации */
-    padding: 10px 0;
-    margin-top: 156px;
-}
-
-.nav__list {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    white-space: nowrap;
-    /* Запрещаем перенос текста на новую строку */
-    overflow: hidden;
-
-}
-
-.nav__list::after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-}
-
-.nav__list-content {
-    display: inline-block;
-    animation: scrollLeft 20s linear infinite;
-    /* Анимация: 20 сек, линейно, бесконечно */
-}
-
-.nav__item {
-    display: inline-block;
-    /* Важно для inline-контейнера */
-    margin: 0 15px;
-    font-size: 30px;
-}
-
-nav ul li a {
+    background-color: #fdfdfd;
     color: #000;
-    text-decoration: none;
-    font-weight: bold;
+    border: 2px solid #000;
+    /* Чёрная обводка 2 px */
 }
 
-
-
-/* Стили для секции игр */
+/*заголовок*/
 .section {
     margin-top: 94px;
+    margin-bottom: 72px;
 }
 
 .section__title {
@@ -118,79 +73,143 @@ nav ul li a {
     font-size: 64px;
 }
 
+.section__text {
+    font-size: 24px;
+    max-width: 670px;
+}
+
+/* Стили для секции игр */
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /* Размещаем плитки игр */
-    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px; /* Задаем расстояние между карточками 32px */
 }
 
 .game-tile {
-    background-color: #444;
-    /* Темный фон для плиток */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    width: 250px;
-    /* Фиксированная ширина плитки */
-    transition: transform 0.3s;
+    display: flex; /* Меняем на flex для управления выравниванием */
+    flex-direction: column; /* Устанавливаем направление по колонкам */
+    justify-content: flex-start; /* По умолчанию выравнивание по верху */
+    transition: transform 0.3s ease; /* Плавный переход при наведении */
+}
+
+.game-tile:nth-child(n+4) {
+    justify-content: flex-end; /* Для нижнего ряда выравнивание по низу */
 }
 
 .game-tile:hover {
-    transform: scale(1.05);
-    /* Увеличение при наведении */
+    transform: scale(1.05); /* Увеличение карточки при наведении */
 }
 
-.play-button {
-    background-color: #4CAF50;
-    /* Зеленый фон для кнопки игры */
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.game-info {
+    max-width: 378px;
+    margin: auto; /* Центрирование карточек */
 }
 
-.play-button:hover {
-    background-color: #45a049;
-    /* Более темный зеленый при наведении */
+.game-info img {
+    max-width: 100%; /* Убедиться, что изображение вписывается в карточку */
+    height: auto; /* Сохранять пропорции изображения */
 }
 
-/* Стили для секции мини-игр */
-.mini-games {
-    margin: 20px;
+/* Спецификация высоты для изображений, если требуется */
+.game-info__one, .game-info__three, .game-info__five {
+    max-height: 473px;
 }
 
+.game-info__two, .game-info__four, .game-info__six {
+    max-height: 512px;
+}
+/*нижняя секция игр*/
 .mini-games__title {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 72px;
+    margin-top: 46px;
+    font-size: 64px;
+}
+
+.mini-games__info-one {
+    max-width: 600px;
+    max-height: 500px;
+    padding-bottom: 244px;
+    padding: 48px;
+}
+.mini-games__info-three{
+   max-width: 600px;
+    max-height: 500px;
+    padding-bottom: 244px;
+    padding: 48px;   
+}
+.mini-games__info-five{
+    max-width: 600px;
+    max-height: 500px;
+    padding-bottom: 244px;
+    padding: 48px;    
+}
+.mini-games__game-right {
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    margin-bottom: 32px;
+    justify-content: space-between;
 }
 
 .mini-games__game {
-    background-color: #444;
-    /* Темный фон для мини-игр */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px auto;
-    text-align: center;
-    width: 90%;
-    /* Ширина мини-игр */
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    gap: 48px;
+    margin-bottom: 32px;
+}
+
+.mini-games__game-title {
+    font-size: 48px;
+    padding-top: 48px;
+    color: #000;
+}
+
+.mini-games__description {
+    font-size: 24px;
+    color: #000;
+    padding-bottom: 36px;
+}
+
+.mini-games__play-button {
+    background-color: black;
+    /* Черный фон для кнопки */
+    color: white;
+    /* Белый текст */
+    padding: 19px 72px;
+    text-decoration: none;
+    border-radius: 60px;
+    transition: background-color 0.3s;
+}
+
+.mini-games__play-button:hover {
+    background-color: #fdfdfd;
+    color: #000;
+    border: 2px solid #000;
+    /* Чёрная обводка 2 px */
 }
 
 /* Стили для футера */
 .footer {
-    background-color: #333;
+    background-color: rgba(189, 237, 53, 1);
     /* Темный фон футера */
     text-align: center;
-    padding: 10px 0;
+    padding: 60px 0;
     position: relative;
     bottom: 0;
     width: 100%;
+    max-height: 150px;
 }
 
 .footer__text {
     margin: 0;
-    color: white;
+    color: rgb(11, 11, 11);
+    font-size: 24px;
 }
