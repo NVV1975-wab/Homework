@@ -5,56 +5,74 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Homework</title>
 </head>
 
 <body>
-    <header class="header center">
-        <div class="header__content">
-            <h1 class="header__title">Добро пожаловать&nbsp; на мой сайт мини-игр</h1>
-            <p class="header__description">Тебе предстоит пройти несколько увлекательных игр.&nbsp;
+    <header class="page-header center">
+        <div class="page-header__content">
+            <h1 class="page-header__title">Добро пожаловать&nbsp;на мой сайт мини-игр</h1>
+            <p class="page-header__description">Тебе предстоит пройти несколько увлекательных игр.&nbsp;
                 Если готов, нажимай «Поехали!» и приступай.</p>
-            <a href="#games" class="header__button start-button">Поехали!</a>
+            <a href="#games" class="page-header__button start-button">Поехали!</a>
         </div>
     </header>
 
-    <div class="section center">
-        <h2 class="section__title">Об играх</h2>
-        <p class="section__text">В моей коллекции представлено 6 игр на разные темы.&nbsp; Игры несложные — в них может
+    <div class="about-section center">
+        <h2 class="about-section__title">Об играх</h2>
+        <p class="about-section__text">В моей коллекции представлено 6 игр на разные темы.&nbsp; Игры несложные — в них может
             поиграть каждый.&nbsp; Все игры доступны для пользования.</p>
     </div>
 
-    <main id="games" class="game center">
-        <a href="#guess" class="game-tile" id="guess">
-            <div class="game-info">
-                <img class="game-info__one" src="img/cover1.png" alt="игра 1">
+    <main id="games" class="games-list center">
+        <section class="games-list__section">
+        <a href="#guess" class="games-list__tile" id="guess">
+            <div class="game-card">
+                <img class="game-card__one" src="img/cover-1.png" alt="игра 1">
+                <p class="game-card__number">Игра № 1</p>
+                <h3 class="game-card__heading">Угадай число</h3>
             </div>
         </a>
-        <a href="#arithmetic" class="game-tile" id="arithmetic">
-            <div class="game-info">
-                <img class="game-info__two" src="img/cover2.png" alt="игра 2">
+        <a href="#arithmetic" class="games-list__tile" id="arithmetic">
+            <div class="game-card">
+                <img class="game-card__two" src="img/cover-2.png" alt="игра 2">
+                <p class="game-card__number">Игра № 2</p>
+                <h3 class="game-card__heading">Простая арифметика</h3>  
             </div>
         </a>
-        <a href="#reverse" class="game-tile" id="reverse">
-            <div class="game-info">
-                <img class="game-info__three" src="img/cover3.png" alt="игра 3">
+        <a href="#reverse" class="games-list__tile" id="reverse">
+            <div class="game-card">
+                <img class="game-card__three" src="img/cover-3.png" alt="игра 3">
+                <p class="game-card__number">Игра № 3</p>
+                <h3 class="game-card__heading">Переверни текст</h3> 
             </div>
         </a>
-        <a href="#rock-paper-scissors" class="game-tile" id="rock-paper-scissors">
-            <div class="game-info">
-                <img class="game-info__four" src="img/cover4.png" alt="игра 4">
+    </section>
+    <section class="games-list__section-bottom">
+        <a href="#rock-paper-scissors" class="games-list__tile" id="rock-paper-scissors">
+            <div class="game-card">
+                <img class="game-card__four" src="img/cover-4.png" alt="игра 4">
+                <p class="game-card__number">Игра № 4</p>
+                <h3 class="game-card__heading">Камень, ножницы, бумага</h3> 
             </div>
         </a>
-        <a href="#quiz" class="game-tile" id="quiz">
-            <div class="game-info">
-                <img class="game-info__five" src="img/cover5.png" alt="игра 5">
+        <a href="#quiz" class="games-list__tile" id="quiz">
+            <div class="game-card">
+                <img class="game-card__five" src="img/cover-5.png" alt="игра 5">
+                <p class="game-card__number">Игра № 5</p>
+                <h3 class="game-card__heading">Простая викторина</h3>      
             </div>
         </a>
-        <a href="#random-color" class="game-tile" id="random-color">
-            <div class="game-info">
-                <img class="game-info__six" src="img/cover6.png" alt="игра 6">
+        <a href="#random-color" class="games-list__tile" id="random-color">
+            <div class="game-card"> 
+                <img class="game-card__six" src="img/cover-6.png" alt="игра 6">
+                 <p class="game-card__number">Игра № 6</p>
+                <h3 class="game-card__heading">Генератор случайных цветов</h3>
             </div>
         </a>
+    </section>
     </main>
 
     <section class="mini-games center">
@@ -76,7 +94,7 @@
             </div>
         </div>
         <div class="mini-games__game-right" id="reverse">
-             <img class="mini-games__cover" src="img/cover2.3.png" alt="игра 3">
+            <img class="mini-games__cover" src="img/cover2.3.png" alt="игра 3">
             <div class="mini-games__info-three">
                 <h3 class="mini-games__game-title">Переверни текст</h3>
                 <p class="mini-games__description">Переверни введённый текст.</p>
@@ -84,7 +102,7 @@
             </div>
         </div>
         <div class="mini-games__game" id="rock-paper-scissors">
-             <img class="mini-games__cover" src="img/cover2.4.png" alt="игра 4">
+            <img class="mini-games__cover" src="img/cover2.4.png" alt="игра 4">
             <div class="mini-games__info-four">
                 <h3 class="mini-games__game-title">Камень, ножницы, бумага</h3>
                 <p class="mini-games__description">Сыграй против компьютера!</p>
@@ -92,7 +110,7 @@
             </div>
         </div>
         <div class="mini-games__game-right" id="quiz">
-             <img class="mini-games__cover" src="img/cover2.5.png" alt="игра 5">
+            <img class="mini-games__cover" src="img/cover2.5.png" alt="игра 5">
             <div class="mini-games__info-five">
                 <h3 class="mini-games__game-title">Простая викторина</h3>
                 <p class="mini-games__description">Проверь свои знания в викторине.</p>
@@ -100,7 +118,7 @@
             </div>
         </div>
         <div class="mini-games__game" id="random-color">
-             <img class="mini-games__cover" src="img/cover2.6.png" alt="игра 6">
+            <img class="mini-games__cover" src="img/cover2.6.png" alt="игра 6">
             <div class="mini-games__info-six">
                 <h3 class="mini-games__game-title">Генератор случайных цветов</h3>
                 <p class="mini-games__description">Сгенерируй случайный цвет и посмотри его!</p>

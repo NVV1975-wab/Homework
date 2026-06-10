@@ -10,27 +10,31 @@ body {
 }
 
 /* Стили для заголовка */
-.header {
+.page-header {
     background-color: rgba(225, 255, 143, 1);
     /* Зеленый фон */
     padding: 20px;
     width: 100%;
 }
 
-.header__content {
-    max-width: 700px;
+a {
+    text-decoration: none;
+}
+
+.page-header__content {
+    max-width: 796px;
     /* margin-left: 120px;*/
     margin-bottom: 156px;
 }
 
-.header__title {
+.page-header__title {
     margin: 0;
     font-size: 64px;
     margin-top: 196px;
     color: #000;
 }
 
-.header__description {
+.page-header__description {
     color: #000;
     font-size: 24px;
     max-width: 650px;
@@ -38,71 +42,172 @@ body {
     margin-bottom: 48px;
 }
 
-.header::before {
-    content: url(img/star-righte.png);
+.page-header::before {
+    content: "";
+    background-image: url(img/Group.svg);
+    background-size: contain;
+    /* Подгоняет изображения под размеры элемента */
+    background-repeat: no-repeat;
+    /* Избегает повторения изображений */
     position: absolute;
-    display: block;
+    width: 1074px;
+    /* Ширина согласно макету */
+    height: 1100px;
+    /* Высота согласно макету */
+    opacity: 1;
+    /* Полная непрозрачность */
+    top: -333.46px;
+    /* Вертикальное положение */
     left: 854px;
-    top: -100px;
-    z-index: 100;
+    /* Горизонтальное положение */
+    z-index: 1;
+    /* Положение на слое (при необходимости) */
 }
 
 /*звездочки*/
-.header__content::after {
-    content: '';
+.page-header__content::before {
+    content: "";
     position: absolute;
-    background: url('img/Star-left1.png') no-repeat;
+    background-image: url('img/Star\ 5.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
     /* Путь к изображению первой звёздочки */
-    width: 80px;
-    /* Размер звёздочки */
-    height: 80px;
-    /* Размер звёздочки */
-    left: 100px;
-    /* Позиция первой звёздочки */
-    top: 500px;
-    /* Позиция первой звёздочки */
+    width: 37px;
+    height: 37px;
+    left: 948px;
+    top: 538px;
     z-index: 1;
     /* Убедитесь, что звёздочки находятся над фоном */
 }
 
-.header__content::after {
-    content: '';
+.page-header::after {
+    content: "";
     position: absolute;
-    background: url('img/Star-left2.png') no-repeat;
-    width: 80px;
-    height: 80px;
-    left: 100px;
-    /* Позиция второй звёздочки */
-    top: 100px;
-    /* Позиция второй звёздочки */
+    background-image: url('img/Star\ 3.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Путь к изображению первой звёздочки */
+    width: 35px;
+    height: 35px;
+    left: 156px;
+    top: 69px;
     z-index: 1;
 }
 
-.header__content::after {
-    content: '';
+.page-header__description::before {
+    content: "";
     position: absolute;
-    background: url('img/Star-right-b.png') no-repeat;
-    width: 60px;
-    height: 60px;
-    left: 1200px;
-    /* Позиция третьей звёздочки */
-    top: 500px;
-    /* Позиция третьей звёздочки */
+    background-image: url('img/Star\ 2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Путь к изображению первой звёздочки */
+    width: 57px;
+    height: 57px;
+    left: 63px;
+    top: 94px;
     z-index: 1;
 }
 
-.header__content::after {
-    content: '';
+.page-header__content::after {
+    content: "";
     position: absolute;
-    background: url('img/Star-right-m.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    left: 1200px;
-    top: 500px;
+    background: url('img/Star\ 4.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 83px;
+    height: 83px;
+    left: 1013px;
+    top: 568px;
     z-index: 1;
 }
 
+.games-list::after {
+    content: "";
+    position: absolute;
+    background: url('img/Star\ 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 585px;
+    height: 585px;
+    left: 1100px;
+    top: 830px;
+    z-index: -1;
+    transform: rotate(7deg);
+}
 
+.games-list::before {
+    content: "";
+    position: absolute;
+    background: url('img/Star\ 12.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 55px;
+    left: 40px;
+    top: 1630px;
+    z-index: 1;
+    
+}
+.games-list__section::before{
+     content: "";
+    position: absolute;
+    background: url('img/Star\ 11.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 31px;
+    height: 31px;
+    left: 25px;
+    top: 1570px;
+    z-index: 1;  
+}
+.games-list__section::after{
+     content: "";
+    position: absolute;
+    background: url('img/Star\ 6.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 69px;
+    height: 69px;
+    left: 1400px;
+    top: 2465px;
+    z-index: 1;  
+}
+.game-card::before{
+    content: "";
+    position: absolute;
+    background: url('img/Star\ 7.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    left: 1350px;
+    top: 2430px;
+    z-index: 1;     
+}
+.mini-games__info-six::before{
+   content: "";
+    position: absolute;
+    background: url('img/Star\ 8.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 69px;
+    height: 69px;
+    left: 1390px;
+    top: 5700px;
+    z-index: 1;      
+}
+.mini-games__info-six::after{
+   content: "";
+    position: absolute;
+    background: url('img/Star\ 10.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 41px;
+    height: 41px;
+    left: 1350px;
+    top: 5750px;
+    z-index: 1;      
+}
 /* Стили для кнопки начала */
 .start-button {
     background-color: black;
@@ -115,7 +220,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.header__button {
+.page-header__button {
     font-size: 24px;
 }
 
@@ -127,17 +232,17 @@ body {
 }
 
 /*заголовок*/
-.section {
+.about-section {
     margin-top: 94px;
     margin-bottom: 72px;
 }
 
-.section__title {
+.about-section__title {
     margin-top: 20px;
     font-size: 64px;
 }
 
-.section__text {
+.about-section__text {
     font-size: 24px;
     max-width: 670px;
 }
@@ -148,51 +253,79 @@ body {
     padding-right: calc(50% - 600px);
 }
 
+
+
 main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.game-tile {
+.game-card {
+    background-color: #ffffff;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
-    /* Устанавливаем направление по колонкам */
-    justify-content: flex-start;
-    /* По умолчанию выравнивание по верху */
     transition: transform 0.3s ease;
     /* Плавный переход при наведении */
 }
 
-.game-tile:nth-child(n+4) {
+.games-list__section {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.games-list__section-bottom {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+}
+
+
+.games-list__section-bottom:nth-child(n+4) {
     justify-content: flex-end;
     /* Для нижнего ряда выравнивание по низу */
 }
 
-.game-tile:hover {
+.games-list__tile:hover {
     transform: scale(1.05);
     /* Увеличение карточки при наведении */
+     transition: transform 0.8s ease; /* Плавный переход для трансформации */
 }
 
-.game-info {
-    max-width: 378px;
-    margin: auto;
-    /* Центрирование карточек */
+
+.game-card__number {
+    display: inline-block;
+    background-color: rgba(247, 247, 247, 1);
+    /* Серый фон */
+    color: #000000;
+    /* Тёмный текст */
+    padding: 8px 16px 8px 10px;
+    border-radius: 52px;
+    /* Овальная форма */
+    font-size: 16px;
+    max-width: 108px;
+    max-height: 36px;
+    margin: 32px 32px;
 }
 
-.game-info img {
-    max-width: 100%;
-    /* Убедиться, что изображение вписывается в карточку */
-    height: auto;
-    /* Сохранять пропорции изображения */
+
+.game-card__heading {
+    font-size: 32px;
+    color: #000;
+    padding: 16px 32px 36px 32px;
+    max-width: 300px;
 }
+
+
+
 
 /* Спецификация высоты для изображений, если требуется */
-.game-info__one, .game-info__three, .game-info__five {
+.game-card__one, .game-card__three, .game-card__five {
     max-height: 473px;
 }
 
-.game-info__two, .game-info__four, .game-info__six {
+.game-card__two, .game-card__four, .game-card__six {
     max-height: 512px;
 }
 
@@ -282,6 +415,7 @@ main {
     bottom: 0;
     width: 100%;
     max-height: 150px;
+    margin-top: 144px;
 }
 
 .footer__text {
