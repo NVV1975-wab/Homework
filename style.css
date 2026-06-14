@@ -306,14 +306,14 @@ main {
     font-size: 16px;
     max-width: 108px;
     max-height: 36px;
-    margin: 32px 32px;
+    margin: 16px 32px;
 }
 
 
 .game-card__heading {
     font-size: 32px;
     color: #000;
-    padding: 16px 32px 36px 32px;
+    padding: 1px 32px 1px 32px;
     max-width: 300px;
 }
 
@@ -322,7 +322,7 @@ main {
 
 /* Спецификация высоты для изображений, если требуется */
 .game-card__one, .game-card__three, .game-card__five {
-    max-height: 473px;
+    max-height: 314px;
 }
 
 .game-card__two, .game-card__four, .game-card__six {
