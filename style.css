@@ -146,10 +146,11 @@ a {
     left: 40px;
     top: 1630px;
     z-index: 1;
-    
+
 }
-.games-list__section::before{
-     content: "";
+
+.games-list__section::before {
+    content: "";
     position: absolute;
     background: url('img/Star\ 11.svg');
     background-size: contain;
@@ -158,10 +159,11 @@ a {
     height: 31px;
     left: 25px;
     top: 1570px;
-    z-index: 1;  
+    z-index: 1;
 }
-.games-list__section::after{
-     content: "";
+
+.games-list__section::after {
+    content: "";
     position: absolute;
     background: url('img/Star\ 6.svg');
     background-size: contain;
@@ -170,9 +172,10 @@ a {
     height: 69px;
     left: 1400px;
     top: 2465px;
-    z-index: 1;  
+    z-index: 1;
 }
-.game-card::before{
+
+.game-card::before {
     content: "";
     position: absolute;
     background: url('img/Star\ 7.svg');
@@ -182,10 +185,11 @@ a {
     height: 35px;
     left: 1350px;
     top: 2430px;
-    z-index: 1;     
+    z-index: 1;
 }
-.mini-games__info-six::before{
-   content: "";
+
+.mini-games__info-six::before {
+    content: "";
     position: absolute;
     background: url('img/Star\ 8.svg');
     background-size: contain;
@@ -194,10 +198,11 @@ a {
     height: 69px;
     left: 1390px;
     top: 5700px;
-    z-index: 1;      
+    z-index: 1;
 }
-.mini-games__info-six::after{
-   content: "";
+
+.mini-games__info-six::after {
+    content: "";
     position: absolute;
     background: url('img/Star\ 10.svg');
     background-size: contain;
@@ -206,8 +211,9 @@ a {
     height: 41px;
     left: 1350px;
     top: 5750px;
-    z-index: 1;      
+    z-index: 1;
 }
+
 /* Стили для кнопки начала */
 .start-button {
     background-color: black;
@@ -290,7 +296,8 @@ main {
 .games-list__tile:hover {
     transform: scale(1.05);
     /* Увеличение карточки при наведении */
-     transition: transform 0.8s ease; /* Плавный переход для трансформации */
+    transition: transform 0.8s ease;
+    /* Плавный переход для трансформации */
 }
 
 
@@ -422,4 +429,334 @@ main {
     margin: 0;
     color: rgb(11, 11, 11);
     font-size: 24px;
+}
+
+@media(max-width:1024px) {
+    .center {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    
+}
+
+@media(min-width:768px) and (max-width:833px) {
+    
+
+
+}
+
+@media (max-width:767px) {
+
+    .center {
+        padding-left: calc(50% - 188px);
+        padding-right: calc(50% - 188px);
+    }
+
+    .page-header__content {
+        text-align: center;
+    }
+
+    .page-header__title {
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+
+    .page-header__description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+
+    .start-button {
+        background-color: black;
+        /* Черный фон для кнопки */
+        color: white;
+        /* Белый текст */
+        padding: 16px 80px;
+        text-decoration: none;
+        border-radius: 60px;
+        transition: background-color 0.3s;
+    }
+
+    .page-header__button {
+        font-size: 16px;
+    }
+
+    .games-list__section {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    .games-list__section-bottom {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+
+
+    .about-section__text {
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+
+    .games-list__section {
+        display: none;
+    }
+
+    .games-list__section-bottom {
+        display: none;
+    }
+
+    .mini-games__title {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .mini-games__title {
+        margin-bottom: 48px;
+        margin-top: 48px;
+        text-align: left;
+    }
+
+    .about-section {
+        display: none;
+    }
+
+    .mini-games__game-right {
+        background-color: #ffffff;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
+
+    .mini-games__game {
+        background-color: #ffffff;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
+
+    /*убираю звезды*/
+
+    .games-list::after {
+        display: none;
+    }
+
+
+    .games-list::before {
+        display: none;
+    }
+
+
+    .games-list__section::before {
+        display: none;
+    }
+
+    .games-list__section::after {
+        display: none;
+    }
+
+    .game-card::before {
+        display: none;
+    }
+
+    .mini-games__info-six::before {
+        display: none;
+    }
+
+    .mini-games__info-six::after {
+        display: none;
+    }
+
+    /*новые звёзды*/
+    .page-header::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/star-mobile.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 224px;
+        height: 239px;
+        left: 188px;
+        top: -103px;
+        z-index: 1;
+    }
+
+    .page-header::after {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 3.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 21px;
+        height: 21px;
+        left: 92px;
+        top: 64px;
+        z-index: 1;
+    }
+
+    .page-header__content::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 5.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* Путь к изображению первой звёздочки */
+        width: 18px;
+        height: 18px;
+        left: 273px;
+        top: 557px;
+        z-index: 1;
+        /* Убедитесь, что звёздочки находятся над фоном */
+    }
+
+
+    .page-header__description::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 2.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* Путь к изображению первой звёздочки */
+        width: 35px;
+        height: 35px;
+        left: 38px;
+        top: 97px;
+        z-index: 1;
+    }
+
+    .page-header__content::after {
+        content: "";
+        position: absolute;
+        background: url('img/Star\ 4.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 39px;
+        height: 41px;
+        left: 304px;
+        top: 580px;
+        z-index: 1;
+    }
+
+    /*мини игры*/
+    .page-header__content {
+        max-width: 343px;
+        margin-left: 16px;
+        margin-bottom: 182px;
+
+    }
+
+    .page-header {
+        padding: 1px;
+    }
+
+    .mini-games {
+        max-width: 343px;
+        margin-left: 16px;
+    }
+
+    .mini-games__game-title {
+        font-size: 32px;
+        padding-top: 0px;
+        color: #000;
+    }
+
+    .mini-games__description {
+        font-size: 16px;
+        color: #000;
+        padding-bottom: 29px;
+    }
+
+    .mini-games__info-one {
+        max-width: 600px;
+        max-height: 400px;
+        padding-bottom: 244px;
+        padding: 0px 29px 32px 32px;
+    }
+
+    .mini-games__play-button {
+        background-color: black;
+        color: white;
+        padding: 18px 112px;
+        text-decoration: none;
+        border-radius: 60px;
+        transition: background-color 0.3s;
+    }
+
+    .mini-games__info-two {
+        max-width: 600px;
+        max-height: 350px;
+        padding-bottom: 244px;
+        padding: 0px 29px 32px 32px;
+    }
+
+    .mini-games__game {
+        gap: 0px;
+        margin-bottom: 24px;
+        padding-bottom: 10px;
+    }
+
+    .mini-games__info-three {
+        max-width: 600px;
+        max-height: 350px;
+        padding: 1px 29px 42px 29px;
+
+    }
+
+    .mini-games__info-four {
+        max-width: 600px;
+        max-height: 350px;
+        padding: 1px 29px 42px 29px;
+    }
+
+    .mini-games__info-five {
+        max-width: 600px;
+        max-height: 350px;
+        padding: 1px 29px 42px 29px;
+    }
+
+    .mini-games__info-six {
+        max-width: 600px;
+        max-height: 350px;
+        padding: 1px 29px 42px 29px;
+    }
+
+    .footer {
+        margin-top: 10px;
+        height: 100px;
+        padding: 50px 0;
+        max-height: 10px;
+    }
+
+    .footer__text {
+        font-size: 16px;
+    }
 }
