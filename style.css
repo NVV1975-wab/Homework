@@ -437,14 +437,10 @@ main {
         padding-right: 0;
     }
 
-    
-}
-
-@media(min-width:768px) and (max-width:833px) {
-    
-
 
 }
+
+@media(min-width:768px) and (max-width:833px) {}
 
 @media (max-width:767px) {
 
@@ -600,14 +596,15 @@ main {
     .page-header::before {
         content: "";
         position: absolute;
-        background-image: url('img/star-mobile.svg');
+        background-image: url('img/star-mobil.svg');
         background-size: contain;
         background-repeat: no-repeat;
         width: 224px;
         height: 239px;
-        left: 188px;
-        top: -103px;
+        left: 175px;
+        top: -10px;
         z-index: 1;
+        transform: rotate(5deg);
     }
 
     .page-header::after {
