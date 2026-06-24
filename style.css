@@ -437,10 +437,212 @@ main {
         padding-right: 0;
     }
 
+    .games-list::after {
+        display: none;
+    }
+
+
+    .games-list::before {
+        display: none;
+    }
+
+
+    .games-list__section::before {
+        display: none;
+    }
+
+    .games-list__section::after {
+        display: none;
+    }
+
+    .game-card::before {
+        display: none;
+    }
+
+    .mini-games__info-six::before {
+        display: none;
+    }
+
+    .mini-games__info-six::after {
+        display: none;
+    }
+
+    .page-header::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/star-mobil.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 224px;
+        height: 239px;
+        left: 175px;
+        top: -10px;
+        z-index: 1;
+        transform: rotate(5deg);
+    }
+
+    .page-header::after {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 3.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 21px;
+        height: 21px;
+        left: 92px;
+        top: 64px;
+        z-index: 1;
+    }
+
+    .page-header__content::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 5.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* Путь к изображению первой звёздочки */
+        width: 18px;
+        height: 18px;
+        left: 273px;
+        top: 557px;
+        z-index: 1;
+        /* Убедитесь, что звёздочки находятся над фоном */
+    }
+
+
+    .page-header__description::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 2.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* Путь к изображению первой звёздочки */
+        width: 35px;
+        height: 35px;
+        left: 38px;
+        top: 97px;
+        z-index: 1;
+    }
+
+    .page-header__content::after {
+        content: "";
+        position: absolute;
+        background: url('img/Star\ 4.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 39px;
+        height: 41px;
+        left: 304px;
+        top: 580px;
+        z-index: 1;
+    }
+
+
 
 }
 
-@media(min-width:768px) and (max-width:833px) {}
+@media(min-width:768px) and (max-width:833px) {
+    .games-list::after {
+        display: none;
+    }
+
+
+    .games-list::before {
+        display: none;
+    }
+
+
+    .games-list__section::before {
+        display: none;
+    }
+
+    .games-list__section::after {
+        display: none;
+    }
+
+    .game-card::before {
+        display: none;
+    }
+
+    .mini-games__info-six::before {
+        display: none;
+    }
+
+    .mini-games__info-six::after {
+        display: none;
+    }
+
+    .page-header::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/star-mobil.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 224px;
+        height: 239px;
+        left: 540px;
+        top: -10px;
+        z-index: 1;
+        transform: rotate(1deg);
+    }
+
+    .page-header::after {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 3.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 21px;
+        height: 21px;
+        left: 92px;
+        top: 64px;
+        z-index: 1;
+    }
+
+    .page-header__content::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 5.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* Путь к изображению первой звёздочки */
+        width: 18px;
+        height: 18px;
+        left: 273px;
+        top: 557px;
+        z-index: 1;
+        /* Убедитесь, что звёздочки находятся над фоном */
+    }
+
+
+    .page-header__description::before {
+        content: "";
+        position: absolute;
+        background-image: url('img/Star\ 2.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* Путь к изображению первой звёздочки */
+        width: 35px;
+        height: 35px;
+        left: 38px;
+        top: 97px;
+        z-index: 1;
+    }
+
+    .page-header__content::after {
+        content: "";
+        position: absolute;
+        background: url('img/Star\ 4.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 39px;
+        height: 41px;
+        left: 304px;
+        top: 580px;
+        z-index: 1;
+    }
+
+}
 
 @media (max-width:767px) {
 
@@ -601,10 +803,10 @@ main {
         background-repeat: no-repeat;
         width: 224px;
         height: 239px;
-        left: 175px;
+        left: 220px;
         top: -10px;
         z-index: 1;
-        transform: rotate(5deg);
+        transform: rotate(359deg);
     }
 
     .page-header::after {
