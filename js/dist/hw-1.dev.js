@@ -60,9 +60,4 @@ console.log(user);
 /* Блок 10 */
 
 var name = prompt("Как вас зовут?");
-
-if (name !== null) {
-  alert("\u041F\u0440\u0438\u0432\u0435\u0442, ${name}!");
-} else {
-  alert("Вы отменили ввод имени.");
-}
+alert("\u041F\u0440\u0438\u0432\u0435\u0442, ".concat(name, "!"));
