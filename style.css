@@ -664,7 +664,7 @@ main {
         letter-spacing: 0px;
         text-align: center;
         vertical-align: middle;
-
+        margin-top: 147px;
     }
 
     .page-header__description {
@@ -681,7 +681,7 @@ main {
         /* Черный фон для кнопки */
         color: white;
         /* Белый текст */
-        padding: 16px 80px;
+        padding: 18px 80px;
         text-decoration: none;
         border-radius: 60px;
         transition: background-color 0.3s;
@@ -689,6 +689,7 @@ main {
 
     .page-header__button {
         font-size: 16px;
+        font-weight: 600;
     }
 
     .games-list__section {
@@ -736,11 +737,20 @@ main {
         vertical-align: middle;
     }
 
+    .mini-games__play-button {
+        font-weight: 600;
+    }
+
     .mini-games__title {
         margin-bottom: 48px;
         margin-top: 48px;
         text-align: left;
     }
+
+    .mini-games__game-title {
+        margin-bottom: 10px;
+    }
+
 
     .about-section {
         display: none;
@@ -752,6 +762,7 @@ main {
         display: flex;
         flex-direction: column;
         transition: transform 0.3s ease;
+
     }
 
     .mini-games__game {
@@ -803,7 +814,7 @@ main {
         background-repeat: no-repeat;
         width: 224px;
         height: 239px;
-        left: 220px;
+        left: 200px;
         top: -10px;
         z-index: 1;
         transform: rotate(359deg);

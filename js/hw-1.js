@@ -57,8 +57,5 @@ console.log(user);
 
 /* Блок 10 */
 let name = prompt("Как вас зовут?");
-if (name !== null) {
-  alert(`Привет, \${name}!`);
-} else {
-  alert("Вы отменили ввод имени.");
-}
+  alert(`Привет, ${name}!`);
+
