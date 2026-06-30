@@ -1,0 +1,288 @@
+@charset "UTF-8";
+/* Основные стили для всего документа */
+body {
+  font-family: Montserrat, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #282c34;
+  /* Темный фон */
+  color: #ffffff;
+}
+
+/* Стили для заголовка */
+.page-header {
+  background-color: #e1ff8f;
+  /* Зеленый фон */
+  padding: 20px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.page-header__content {
+  max-width: 796px;
+  /* margin-left: 120px;*/
+  margin-bottom: 156px;
+}
+
+.page-header__title {
+  margin: 0;
+  font-size: 64px;
+  margin-top: 196px;
+  color: #000;
+}
+
+.page-header__description {
+  color: #000;
+  font-size: 24px;
+  max-width: 650px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.page-header::before {
+  content: "";
+  background-image: url(img/Group.svg);
+  background-size: contain;
+  /* Подгоняет изображения под размеры элемента */
+  background-repeat: no-repeat;
+  /* Избегает повторения изображений */
+  position: absolute;
+  width: 1074px;
+  /* Ширина согласно макету */
+  height: 1100px;
+  /* Высота согласно макету */
+  opacity: 1;
+  /* Полная непрозрачность */
+  top: -333.46px;
+  /* Вертикальное положение */
+  left: 854px;
+  /* Горизонтальное положение */
+  z-index: 1;
+  /* Положение на слое (при необходимости) */
+}
+
+/* Стили для секции игр */
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  background-color: #ffffff;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  /* Плавный переход при наведении */
+}
+
+.games-list__section {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.games-list__section-bottom {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+.games-list__section-bottom:nth-child(n+4) {
+  justify-content: flex-end;
+  /* Для нижнего ряда выравнивание по низу */
+}
+
+.games-list__tile:hover {
+  transform: scale(1.05);
+  /* Увеличение карточки при наведении */
+  transition: transform 0.8s ease;
+  /* Плавный переход для трансформации */
+}
+
+.game-card__number {
+  display: inline-block;
+  background-color: #f7f7f7;
+  /* Серый фон */
+  color: #000000;
+  /* Тёмный текст */
+  padding: 8px 16px 8px 10px;
+  border-radius: 52px;
+  /* Овальная форма */
+  font-size: 16px;
+  max-width: 108px;
+  max-height: 36px;
+  margin: 16px 32px;
+}
+
+.game-card__heading {
+  font-size: 32px;
+  color: #000;
+  padding: 1px 32px 1px 32px;
+  max-width: 300px;
+}
+
+/* Спецификация высоты для изображений, если требуется */
+.game-card__one, .game-card__three, .game-card__five {
+  max-height: 314px;
+}
+
+.game-card__two, .game-card__four, .game-card__six {
+  max-height: 512px;
+}
+
+/*нижняя секция игр*/
+.mini-games__title {
+  margin-bottom: 72px;
+  margin-top: 46px;
+  font-size: 64px;
+}
+
+.mini-games__info-one {
+  max-width: 600px;
+  max-height: 500px;
+  padding-bottom: 244px;
+  padding: 48px;
+}
+
+.mini-games__info-three {
+  max-width: 600px;
+  max-height: 500px;
+  padding-bottom: 244px;
+  padding: 48px;
+}
+
+.mini-games__info-five {
+  max-width: 600px;
+  max-height: 500px;
+  padding-bottom: 244px;
+  padding: 48px;
+}
+
+.mini-games__game-right {
+  background-color: #ffffff;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  margin-bottom: 32px;
+  justify-content: space-between;
+}
+
+.mini-games__game {
+  background-color: #ffffff;
+  border-radius: 30px;
+  display: flex;
+  gap: 48px;
+  margin-bottom: 32px;
+}
+
+.mini-games__game-title {
+  font-size: 48px;
+  padding-top: 48px;
+  color: #000;
+}
+
+.mini-games__description {
+  font-size: 24px;
+  color: #000;
+  padding-bottom: 36px;
+}
+
+.mini-games__play-button {
+  background-color: black;
+  /* Черный фон для кнопки */
+  color: white;
+  /* Белый текст */
+  padding: 19px 72px;
+  text-decoration: none;
+  border-radius: 60px;
+  transition: background-color 0.3s;
+}
+
+.mini-games__play-button:hover {
+  background-color: #fdfdfd;
+  color: #000;
+  border: 2px solid #000;
+  /* Чёрная обводка 2 px */
+}
+
+/* Стили для футера */
+.footer {
+  background-color: #bded35;
+  /* Темный фон футера */
+  text-align: center;
+  padding: 60px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  max-height: 150px;
+  margin-top: 144px;
+}
+
+.footer__text {
+  margin: 0;
+  color: #0b0b0b;
+  font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+  .center {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .page-header::before {
+    display: none;
+  }
+
+  .mini-games {
+    display: none;
+  }
+
+  .mini-games__title {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 833px) {
+  .page-header::before {
+    display: none;
+  }
+
+  .mini-games {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .center {
+    padding-left: calc(50% - 188px);
+    padding-right: calc(50% - 188px);
+  }
+
+  .page-header::before {
+    display: none;
+  }
+
+  .mini-games {
+    display: none;
+  }
+
+  .page-header__title {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
