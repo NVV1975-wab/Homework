@@ -137,6 +137,57 @@
     <footer class="footer">
         <h5 class="footer__text">Все права защищены.</h5>
     </footer>
+    <script>
+        const quiz = [
+            {
+                question: "Какой цвет у неба?",
+                options: ["1. Красный", "2. Синий", "3. Зеленый"],
+                correctAnswer: 2
+            },
+            {
+                question: "Сколько дней в неделе?",
+                options: ["1. Шесть", "2. Семь", "3. Восемь"],
+                correctAnswer: 2
+            },
+            {
+                question: "Сколько у человека пальцев на одной руке?",
+                options: ["1. Четыре", "2. Пять", "3. Шесть"],
+                correctAnswer: 2
+            }
+        ];
+
+        const playButton = document.querySelector('#game-quiz .mini-games__play-button');
+
+        if (playButton) {
+            playButton.addEventListener('click', () => {
+                let score = 0;
+
+                for (const q of quiz) {
+                    const questionText = `${q.question}\n\n${q.options.join('\n')}`;
+                    const userInput = prompt(questionText);
+
+                    if (userInput === null) {
+                        // Пользователь нажал «Отмена» — прерываем игру
+                        alert('Игра прервана.');
+                        return;
+                    }
+                    //  только цифры
+                    const userAnswer = parseInt(userInput.trim(), 10);
+
+                    if (isNaN(userAnswer)) {
+                        alert('Пожалуйста, вводите только номер варианта (1, 2 или 3).');
+                        continue;
+                    }
+                    // Проверка ответа
+                    if (userAnswer === q.correctAnswer) {
+                        score++;
+                    }
+                }
+                alert(`Вы ответили правильно на ${score} из ${quiz.length} вопросов.`);
+            });
+        }
+    </script>
+
 </body>
 
 </html>
