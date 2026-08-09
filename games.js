@@ -240,6 +240,110 @@ function askAndCheck() {
   }
 }
 
+function initRPSGame() {
+  const btnRPS = document.getElementById('btn-rps');
+  const panel = document.getElementById('rps-game-panel');
+  const messageEl = document.getElementById('rps-message');
+  const resultEl = document.getElementById('rps-result');
+  const playBtn = document.getElementById('rps-play-btn');
+  const closeBtn = document.getElementById('rps-close-btn');
+
+  if (!btnRPS || !panel) return;
+
+  const options = ['камень', 'ножницы', 'бумага'];
+
+  function getComputerChoice() {
+    const randomIndex = Math.floor(Math.random() * options.length);
+    return options[randomIndex];
+  }
+
+  function determineWinner(user, computer) {
+    if (user === computer) {
+      return 'ничья';
+    }
+    if (
+      (user === 'камень' && computer === 'ножницы') ||
+      (user === 'ножницы' && computer === 'бумага') ||
+      (user === 'бумага' && computer === 'камень')
+    ) {
+      return 'победа';
+    }
+    return 'поражение';
+  }
+
+  function startRound() {
+    const userInput = prompt('Выберите: камень, ножницы или бумага');
+    if (!userInput) {
+      messageEl.textContent = 'Игра прервана.';
+      resultEl.textContent = '';
+      playBtn.style.display = 'none';
+      closeBtn.style.display = 'inline-block';
+      return;
+    }
+
+    const userChoice = userInput.trim().toLowerCase();
+
+    // Проверка ввода
+    if (!options.includes(userChoice)) {
+      messageEl.textContent = 'Неверный ввод. Пожалуйста, выберите: камень, ножницы или бумага.';
+      resultEl.textContent = '';
+      playBtn.style.display = 'inline-block';
+      closeBtn.style.display = 'none';
+      return;
+    }
+
+    const computerChoice = getComputerChoice();
+    const outcome = determineWinner(userChoice, computerChoice);
+
+    let msg = `Вы выбрали: ${userChoice}. Компьютер выбрал: ${computerChoice}.`;
+    let res = '';
+
+    if (outcome === 'победа') {
+      res = '🎉 Победа!';
+      messageEl.style.color = '#28a745';
+    } else if (outcome === 'поражение') {
+      res = '😕 Поражение.';
+      messageEl.style.color = '#dc3545';
+    } else {
+      res = '🤝 Ничья.';
+      messageEl.style.color = '#ffc107';
+    }
+
+    messageEl.textContent = msg;
+    resultEl.textContent = res;
+
+    playBtn.style.display = 'inline-block';
+    closeBtn.style.display = 'inline-block';
+  }
+
+  btnRPS.addEventListener('click', (e) => {
+    e.preventDefault();
+    panel.style.display = 'block';
+    btnRPS.style.display = 'none';
+    messageEl.textContent = '';
+    resultEl.textContent = '';
+    messageEl.style.color = '';
+    playBtn.style.display = 'inline-block';
+    closeBtn.style.display = 'none';
+    startRound();
+  });
+
+  playBtn.addEventListener('click', () => {
+    startRound();
+  });
+
+  closeBtn.addEventListener('click', () => {
+    panel.style.display = 'none';
+    btnRPS.style.display = 'inline-block';
+    messageEl.textContent = '';
+    resultEl.textContent = '';
+  });
+}
+
+
+
+
+
 
 // --- ПОДКЛЮЧАЕМ ОБРАБОТЧИКИ ---
 
@@ -270,6 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
       runQuiz();
     });
   }
+  
 
   // Обработчики для кнопок внутри панели «Угадай число»
   const guessSubmitBtn = document.getElementById('guess-submit-btn');
@@ -294,4 +399,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Инициализация игры «Переверни текст»
   initReverseGame();
+    // Инициализация «Камень, ножницы, бумага»
+  initRPSGame();
 });
