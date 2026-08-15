@@ -1,0 +1,117 @@
+.pageTitle {
+  color: brown;
+  width: 700px;
+}
+
+.btn {
+  background-color: rgb(15, 24, 103);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+
+/*  класс для скрытия */
+.hidden {
+  display: none;
+}
+
+.text-main {
+  color: #840886;
+  width: 700;
+  font-size: 25px;
+}
+
+.but {
+  background-color: rgb(228, 202, 30);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+.but:hover {
+  background-color: #04509b;
+}
+
+.demo-btn {
+  background-color: rgb(109, 4, 62);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+.demo-heading {
+  color: #078333;
+  width: 700;
+  font-size: 25px;
+}
+
+.description {
+  color: #9da506;
+  width: 700;
+  font-size: 25px;
+}
+
+#btn-change-all {
+  background-color: rgb(157, 85, 13);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+#btn-change-descript {
+  background-color: rgb(8, 87, 97);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+.added-paragraph {
+  padding: 8px;
+  margin: 4px 0;
+  background: #148581;
+  font-size: 15px;
+}
+
+#btn-add-paragraph {
+  background-color: rgb(93, 5, 14);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+.descrip {
+  padding: 8px;
+  margin: 6px 0;
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+}
+
+#btn-remove-first {
+  background-color: rgb(210, 77, 37);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+}
