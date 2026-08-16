@@ -12,8 +12,8 @@ click и метод addEventListener, чтобы скрывать и показ�
 Как должно работать: нажатие на кнопку «Скрыть» скрывает текст заголовка. Повторное нажатие показывает текст снова.*/
 
 document.addEventListener('DOMContentLoaded', () => {
-    const title = document.getElementById('main-title');
-    const btn = document.getElementById('btn-change-text');
+    const title = document.querySelector('#main-title');
+    const btn = document.querySelector('#btn-change-text');
 
 
     btn.addEventListener('click', () => {
