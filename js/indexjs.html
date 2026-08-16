@@ -1,12 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <title>DOM-пример</title>
 </head>
-<body>
 
-   <script src="hw-7.js"></script> 
+<body>
+    <div>
+        <h1 class="pageTitle pageTitle--main" id="main-title">Hello, DOM! (Задание 1)</h1>
+        <button class="btn btn--action" id="btn-change-text">НАЖМИ НА МЕНЯ</button>
+    </div>
+    <div>
+        <h1>Задание 2</h1>
+        <p class="text-main" id="text-paragraph">
+            Это тестовый текст для проверки.
+            А вообще эта тема самая интересная.
+            Наверное, потому что видишь, как можно
+            применить в дальнейшей работе.😀
+        </p>
+
+        <button class="but" id="but-text">Изменить цвет текста</button>
+    </div>
+    <div>
+        <h1 class="demo-heading" id="demo-h1">Исходный заголовок (Задание 3)</h1>
+        <button class="demo-btn" id="demo-change-btn">Изменить текст</button>
+    </div>
+    <div>
+        <h1>Примеры элементов с классом description (Задание 4)</h1>
+
+        <p class="description">Это первый текст.</p>
+        <div class="description">А это второй.</в>
+            <span class="description">И третий.</span>
+            <p class="description other-class">Ещё один, у него ещё и другой класс есть.</p>
+
+            <button id="btn-change-all">Изменить текст</button>
+        </div>
+        <div>
+            <h2>Абзацы для проверки (Задание 5)</h2>
+
+            <p class="descript">Это первый абзац с классом descript — его текст поменяется.</p>
+            <p class="descript info">А это второй, у него ещё и дополнительный класс info — но он всё равно изменится.
+            </p>
+            <p class="text">Этот абзац без класса descript</p>
+            <p class="descript">Третий абзац с классом descript.</p>
+
+            <button id="btn-change-descript">Изменить все descript</button>
+        </div>
+        <div>
+            <h2>Добавление элемента (задание 6)</h2>
+
+            <button id="btn-add-paragraph">Добавить элемент</button>
+            <div id="container"></div>
+        </div>
+        <div>
+            <h2>Абзацы для проверки удаления (Задание 7)</h2>
+            <p class="descrip">Первый абзац с классом descrip (будет удалён первым).</p>
+            <p class="descrip">Второй абзац с классом descrip.</p>
+            <p class="descrip">Третий абзац с классом descrip.</p>
+            <p>Обычный абзац без класса — он останется на странице.</p>
+            <button id="btn-remove-first">Удалить первый элемент</button>
+        </div>
+        <script src="hw-8.js"></script>
 </body>
+
 </html>
