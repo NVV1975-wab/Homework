@@ -61,8 +61,7 @@ function initReverseGame() {
 
 // --- ВИКТОРИНА ---
 function runQuiz() {
-  const quiz = [
-    {
+  const quiz = [{
       question: "Какой цвет у неба?",
       options: ["1. Красный", "2. Синий", "3. Зеленый"],
       correctAnswer: 2
@@ -374,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
       runQuiz();
     });
   }
-  
+
 
   // Обработчики для кнопок внутри панели «Угадай число»
   const guessSubmitBtn = document.getElementById('guess-submit-btn');
@@ -399,6 +398,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Инициализация игры «Переверни текст»
   initReverseGame();
-    // Инициализация «Камень, ножницы, бумага»
+  // Инициализация «Камень, ножницы, бумага»
   initRPSGame();
+});
+
+// --- ГЕНЕРАТОР СЛУЧАЙНЫХ ЦВЕТОВ ---
+function initColorGame() {
+  const btnColor = document.getElementById('btn-color');
+  const btnGenerate = document.getElementById('color-btn');
+  const panel = document.getElementById('color-game-panel');
+  const displayText = document.getElementById('color-display');
+
+  if (!btnColor || !panel) return;
+
+  // Функция генерации случайного  цвета
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  //  функция для определения цвета текста 
+  function getContrastColor(hexColor) {
+    const r = parseInt(hexColor.substr(1, 2), 16);
+    const g = parseInt(hexColor.substr(3, 2), 16);
+    const b = parseInt(hexColor.substr(5, 2), 16);
+    // Формула яркости
+    const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+    return (yiq >= 128) ? '#000000' : '#ffffff';
+  }
+
+  //  открытие игры
+  btnColor.addEventListener('click', (e) => {
+    e.preventDefault();
+    panel.style.display = 'block';
+    btnColor.style.display = 'none'; // Скрываем кнопку "Играть!"
+    displayText.textContent = 'Нажми кнопку ниже, чтобы изменить фон!';
+  });
+
+  //  генерация цвета при клике
+  if (btnGenerate) {
+    btnGenerate.addEventListener('click', () => {
+      const newColor = getRandomColor();
+
+      //  фон всей страницы
+      document.body.style.backgroundColor = newColor;
+
+      //  цвет самой кнопки 
+      btnGenerate.style.backgroundColor = newColor;
+
+      btnGenerate.style.color = getContrastColor(newColor);
+    });
+  }
+}
+
+// Вызов всех функций при загрузке страницы 
+document.addEventListener('DOMContentLoaded', () => {
+  initReverseGame();
+  initColorGame();
 });

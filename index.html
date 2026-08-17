@@ -18,6 +18,35 @@
                 Если готов, нажимай <strong>«Поехали!»</strong> и <strong>приступай</strong>.</p>
             <a href="#games" class="page-header__button start-button">Поехали!</a>
         </div>
+        <!--анимированная полоса-->
+        <div class="scrolling-text-wrapper">
+            <div class="scrolling-text-inner">
+                <!-- Блок 1 -->
+                <span>Угадай число</span>
+                <span>Переверни текст</span>
+                <span>Простая арифметика</span>
+                <span>Камень, ножницы, бумага</span>
+                <span>Викторина</span>
+                <span>Генератор цветов</span>
+
+                <!-- Блок 2 (копия) -->
+                <span>Угадай число</span>
+                <span>Переверни текст</span>
+                <span>Простая арифметика</span>
+                <span>Камень, ножницы, бумага</span>
+                <span>Викторина</span>
+                <span>Генератор цветов</span>
+
+                <!-- Блок 3 (копия) -->
+                <span>Угадай число</span>
+                <span>Переверни текст</span>
+                <span>Простая арифметика</span>
+                <span>Камень, ножницы, бумага</span>
+                <span>Викторина</span>
+                <span>Генератор цветов</span>
+            </div>
+        </div>
+        </div>
     </header>
 
     <div class="about-section center">
@@ -173,8 +202,20 @@
             <div class="mini-games__info-six">
                 <h3 class="mini-games__game-title">Генератор случайных цветов</h3>
                 <p class="mini-games__description">Сгенерируй случайный цвет и посмотри его!</p>
-                <a href="#" class="mini-games__play-button">Играть!</a>
+
+                <!-- Панель игры (скрыта по умолчанию) -->
+                <div id="color-game-panel" style="display: none; margin-top: 20px; text-align: left;">
+                    <p id="color-display" style="font-weight: bold; font-size: 24px; min-height: 30px; color: #333;">
+                        Нажми кнопку, чтобы изменить фон!</p>
+                    <button id="color-btn"
+                        style="padding: 15px 30px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 18px; font-weight: bold;">Сгенерировать
+                        цвет</button>
+                </div>
+
+                <a href="#" class="mini-games__play-button" id="btn-color">Играть!</a>
             </div>
+        </div>
+
         </div>
     </section>
     <footer class="footer">

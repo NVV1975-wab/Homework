@@ -66,6 +66,81 @@ a {
     /* Положение на слое (при необходимости) */
 }
 
+/* Стили для бегущей строки */
+.scrolling-text-wrapper {
+    width: 100%;
+    white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+    position: relative;
+    height: 90px; /* Высота полосы */
+    background-color: #12c82a; /* Цвет фона полосы */
+    margin-bottom: -20px; /* Отступ до основного контента */
+    z-index: 10; /* Чтобы была поверх картинок */
+    left: -163px;
+}
+
+
+.scrolling-text-inner {
+    display: inline-block;
+    padding-left: 100%; /* Начальный сдвиг, чтобы анимация шла с правого края */
+    will-change: transform; /* Оптимизация производительности */
+    animation: scroll-left 30s linear infinite; 
+    padding-top: 27px;
+}
+
+.scrolling-text-inner span {
+    display: inline-block;
+    padding: 0 138px; /* Расстояние между названиями игр */
+    font-size: 30px;
+    font-weight: 700;
+    color: #000; /* Цвет текста */
+    text-transform: uppercase; /* Все буквы заглавные, как на макете */
+    letter-spacing: 2px;
+    
+}
+.scrolling-text-inner span::after {
+    content: "";
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    /* Ставим звезду сразу после текста */
+    
+    top: 70%;
+    transform: translateY(-50%);
+    
+    /*звезда по середине между названий*/ 
+       
+    margin-left: 120px; 
+
+    /* картинка звезды */
+    background-image: url(img/Star.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    opacity: 1;
+    z-index: 2;
+}
+
+
+
+/* Анимация движения влево */
+@keyframes scroll-left {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Адаптив для мобильных: скрываем бегущую строку или делаем меньше */
+@media (max-width: 768px) {
+    .scrolling-text-wrapper {
+        display: none; /* На телефонах лучше убрать, чтобы не мешало */
+    }
+}
+
+
 /*звездочки*/
 .page-header__content::before {
     content: "";
@@ -939,4 +1014,113 @@ main {
         font-size: 16px;
         font-weight: 600;
     }
+}
+
+/* Планшеты: 768px – 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    max-width: 100%;
+  }
+
+  /* Центрируем и уменьшаем отступы у контейнера */
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Заголовок: делаем чуть меньше, чтобы влезало */
+  .page-header__title {
+    font-size: 48px;
+    margin-top: 120px;
+  }
+
+  .page-header__description {
+    font-size: 20px;
+    max-width: 550px;
+  }
+
+  /* Убираем все абсолютные звёзды, которые позиционируются по пикселям —
+     на планшетах это ломается. Оставляем только декоративные, если они
+     встроены в фоны или картинки, а не позиционируются вручную. */
+  .page-header::before,
+  .page-header::after,
+  .page-header__content::before,
+  .page-header__content::after,
+  .page-header__description::before,
+  .games-list::after,
+  .games-list::before,
+  .games-list__section::before,
+  .games-list__section::after,
+  .game-card::before,
+  .mini-games__info-six::before,
+  .mini-games__info-six::after {
+    display: none;
+  }
+
+  /* Бегущая строка: на планшетах часто мешает, лучше скрыть */
+  .scrolling-text-wrapper {
+    display: none;
+  }
+
+  /* Сетка игр: делаем 2 колонки вместо 3, чтобы карточки были крупнее */
+  .games-list__section,
+  .games-list__section-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .games-list__tile {
+    width: calc(50% - 16px); /* 2 карточки в ряд с отступом */
+    box-sizing: border-box;
+  }
+
+  .game-card {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Карточки мини‑игр тоже делаем крупнее и в 1–2 колонки */
+  .mini-games__game,
+  .mini-games__game-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .mini-games__cover {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .mini-games__info-one,
+  .mini-games__info-two,
+  .mini-games__info-three,
+  .mini-games__info-four,
+  .mini-games__info-five,
+  .mini-games__info-six {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .mini-games__game-title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .mini-games__description {
+    text-align: center;
+  }
+
+  /* Кнопки делаем чуть компактнее, но всё ещё удобными для пальца */
+  .start-button,
+  .mini-games__play-button {
+    padding: 14px 48px;
+    font-size: 20px;
+  }
+
+  /* Секция «Об играх» — центрируем текст */
+  .about-section__text {
+    text-align: center;
+  }
 }
