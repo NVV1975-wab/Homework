@@ -17,6 +17,7 @@ body {
     /* Зеленый фон */
     padding: 20px;
     width: 100%;
+
 }
 
 a {
@@ -47,12 +48,12 @@ a {
 .page-header::before {
     content: "";
     background-image: url(img/Group.svg);
-    background-size: contain;
+    background-size: cover;
     /* Подгоняет изображения под размеры элемента */
     background-repeat: no-repeat;
     /* Избегает повторения изображений */
     position: absolute;
-    width: 1074px;
+    width: 950px;
     /* Ширина согласно макету */
     height: 1100px;
     /* Высота согласно макету */
@@ -60,11 +61,94 @@ a {
     /* Полная непрозрачность */
     top: -333.46px;
     /* Вертикальное положение */
-    left: 854px;
+    right: 0;
     /* Горизонтальное положение */
     z-index: 1;
     /* Положение на слое (при необходимости) */
 }
+
+/* Стили для бегущей строки */
+
+
+.scrolling-text-wrapper {
+    width: 100%;
+    max-width: 100vw; /* Не шире видимой области экрана */
+    white-space: nowrap;
+    position: absolute;
+    height: 90px;
+    background: rgba(188, 236, 48, 1);
+    margin-bottom: -20px; /* Наложение на следующий контент */
+    z-index: 10;
+    overflow: hidden; /* Ключевое свойство: скрывает текст, выходящий за границы */
+    box-sizing: border-box;
+    padding: 0;
+    left: 0; 
+}
+
+/* Внутренний блок с текстом */
+.scrolling-text-inner {
+    display: inline-block;
+    padding-left: 100%; /* Начальный сдвиг анимации */
+    will-change: transform;
+    animation: scroll-left 30s linear infinite;
+    padding-top: 27px;
+    width: fit-content; /* Ширина ровно по содержимому */
+    box-sizing: border-box;
+}
+
+.scrolling-text-inner span {
+    display: inline-block;
+    padding: 0 138px; /* Расстояние между названиями игр */
+    font-size: 30px;
+    font-weight: 700;
+    color: #000; /* Цвет текста */
+    text-transform: uppercase; /* Все буквы заглавные, как на макете */
+    letter-spacing: 2px;
+    
+}
+.scrolling-text-inner span::after {
+    content: "";
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    /* Ставим звезду сразу после текста */
+    
+    top: 70%;
+    transform: translateY(-50%);
+    
+    /*звезда по середине между названий*/ 
+       
+    margin-left: 120px; 
+
+    /* картинка звезды */
+    background-image: url(img/Star.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    opacity: 1;
+    z-index: 2;
+}
+
+
+
+/* Анимация движения влево */
+@keyframes scroll-left {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Адаптив для мобильных: скрываем бегущую строку или делаем меньше */
+@media (max-width: 768px) {
+    .scrolling-text-wrapper {
+        display: none; /* На телефонах лучше убрать, чтобы не мешало */
+    }
+}
+
 
 /*звездочки*/
 .page-header__content::before {
@@ -432,13 +516,12 @@ main {
     color: rgb(11, 11, 11);
     font-size: 24px;
 }
-
-@media(max-width:1024px) {
-    .center {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
+@media (max-width: 1025px) {
+    .page-header::before,
+    .page-header::after,
+    .page-header__content::before,
+    .page-header__description::before,
+    .page-header__content::after,
     .games-list::after,
     .games-list::before,
     .games-list__section::before,
@@ -446,81 +529,13 @@ main {
     .game-card::before,
     .mini-games__info-six::before,
     .mini-games__info-six::after {
-        display: none;
+        display: none !important; /* Полностью скрываем тяжёлые декорации */
     }
-
-    .page-header::before {
-        content: "";
-        position: absolute;
-        background-image: url('img/star-mobil.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 224px;
-        height: 239px;
-        left: 175px;
-        top: -10px;
-        z-index: 1;
-        transform: rotate(5deg);
+    
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
     }
-
-    .page-header::after {
-        content: "";
-        position: absolute;
-        background-image: url('img/Star\ 3.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 21px;
-        height: 21px;
-        left: 92px;
-        top: 64px;
-        z-index: 1;
-    }
-
-    .page-header__content::before {
-        content: "";
-        position: absolute;
-        background-image: url('img/Star\ 5.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        /* Путь к изображению первой звёздочки */
-        width: 18px;
-        height: 18px;
-        left: 273px;
-        top: 557px;
-        z-index: 1;
-        /* Убедитесь, что звёздочки находятся над фоном */
-    }
-
-
-    .page-header__description::before {
-        content: "";
-        position: absolute;
-        background-image: url('img/Star\ 2.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        /* Путь к изображению первой звёздочки */
-        width: 35px;
-        height: 35px;
-        left: 38px;
-        top: 97px;
-        z-index: 1;
-    }
-
-    .page-header__content::after {
-        content: "";
-        position: absolute;
-        background: url('img/Star\ 4.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 39px;
-        height: 41px;
-        left: 304px;
-        top: 580px;
-        z-index: 1;
-    }
-
-
-
 }
 
 @media(min-width:768px) and (max-width:833px) {
@@ -543,7 +558,8 @@ main {
         background-repeat: no-repeat;
         width: 224px;
         height: 239px;
-        left: 540px;
+      /*  left: 540px;*/
+      right: 0px;
         top: -10px;
         z-index: 1;
         transform: rotate(1deg);
@@ -608,11 +624,18 @@ main {
 }
 
 @media (max-width:767px) {
+.center {
+    width: 100%;
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: 0 auto;    /* Автоматические отступы по бокам */
+    padding: 0 16px;   /* Небольшие отступы от краёв экрана на мобильных */
+    box-sizing: border-box;
+}
 
-    .center {
+   /* .center {
         padding-left: calc(50% - 188px);
         padding-right: calc(50% - 188px);
-    }
+    }*/
 
     .page-header__content {
         text-align: center;
@@ -779,10 +802,11 @@ main {
         background-repeat: no-repeat;
         width: 210px;
         height: 249px;
-        left: 220px;
+        /*left: 220px;*/
         top: -10px;
         z-index: 1;
         transform: rotate(359deg);
+        right: 0px;
     }
 
     .page-header::after {
@@ -940,3 +964,113 @@ main {
         font-weight: 600;
     }
 }
+
+/* Планшеты: 768px – 1024px */
+@media (min-width: 768px) and (max-width: 1025px) {
+  body {
+    max-width: 100%;
+  }
+
+  /* Центрируем и уменьшаем отступы у контейнера */
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Заголовок: делаем чуть меньше, чтобы влезало */
+  .page-header__title {
+    font-size: 48px;
+    margin-top: 120px;
+  }
+
+  .page-header__description {
+    font-size: 20px;
+    max-width: 550px;
+  }
+
+  /* Убираем все абсолютные звёзды, которые позиционируются по пикселям —
+     на планшетах это ломается. Оставляем только декоративные, если они
+     встроены в фоны или картинки, а не позиционируются вручную. */
+  .page-header::before,
+  .page-header::after,
+  .page-header__content::before,
+  .page-header__content::after,
+  .page-header__description::before,
+  .games-list::after,
+  .games-list::before,
+  .games-list__section::before,
+  .games-list__section::after,
+  .game-card::before,
+  .mini-games__info-six::before,
+  .mini-games__info-six::after {
+    display: none;
+  }
+
+  /* Бегущая строка: на планшетах часто мешает, лучше скрыть */
+  .scrolling-text-wrapper {
+    display: none;
+  }
+
+  /* Сетка игр: делаем 2 колонки вместо 3, чтобы карточки были крупнее */
+  .games-list__section,
+  .games-list__section-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .games-list__tile {
+    width: calc(50% - 16px); /* 2 карточки в ряд с отступом */
+    box-sizing: border-box;
+  }
+
+  .game-card {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Карточки мини‑игр тоже делаем крупнее и в 1–2 колонки */
+  .mini-games__game,
+  .mini-games__game-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .mini-games__cover {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .mini-games__info-one,
+  .mini-games__info-two,
+  .mini-games__info-three,
+  .mini-games__info-four,
+  .mini-games__info-five,
+  .mini-games__info-six {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .mini-games__game-title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .mini-games__description {
+    text-align: center;
+  }
+
+  /* Кнопки делаем чуть компактнее, но всё ещё удобными для пальца */
+  .start-button,
+  .mini-games__play-button {
+    padding: 14px 48px;
+    font-size: 20px;
+  }
+
+  /* Секция «Об играх» — центрируем текст */
+  .about-section__text {
+    text-align: center;
+  }
+}
+
